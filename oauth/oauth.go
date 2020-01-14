@@ -6,8 +6,8 @@ import (
 	"encoding/json"
 	"fmt"
 	"time"
-	 "github.com/igson/bookstoreApi/utils/erros"
 	"strings"
+	"github.com/igson/bookstore_oauth_go/oauth/erros"
  	"github.com/mercadolibre/golang-restclient/rest"
 )
 
@@ -42,7 +42,7 @@ func IsPublic(request *http.Request) bool {
 	return request.Header.Get(headerXPublic) == "true"
 }
 
-
+//Autenticacao - realiza a autenticação de usuário
 func Autenticacao(request *http.Request) *erros.MsgErroApi {
 	if request == nil {
 		return nil
